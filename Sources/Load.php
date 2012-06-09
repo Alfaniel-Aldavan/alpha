@@ -1566,7 +1566,6 @@ function loadTheme($id_theme = 0, $initialize = true)
 		'helpadmin',
 		'printpage',
 		'quotefast',
-		'spellcheck',
 	);
 
 	$context['javascript_files'] = array();

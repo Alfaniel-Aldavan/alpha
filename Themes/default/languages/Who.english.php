@@ -49,7 +49,6 @@ $txt['whoall_register'] = 'Registering for an account on the forum.';
 $txt['whoall_register2'] = 'Registering for an account on the forum.';
 $txt['whoall_reminder'] = 'Requesting a password reminder.';
 $txt['whoall_reporttm'] = 'Reporting a topic to a moderator.';
-$txt['whoall_spellcheck'] = 'Using the spellchecker';
 $txt['whoall_unread'] = 'Viewing unread topics since their last visit.';
 $txt['whoall_unreadreplies'] = 'Viewing unread replies since their last visit.';
 $txt['whoall_who'] = 'Viewing <a href="' . $scripturl . '?action=who">Who\'s Online</a>.';

@@ -1389,10 +1389,6 @@ function template_edit_options()
 	echo '
 		// ]]></script>';
 
-	// Any final spellchecking stuff?
-	if (!empty($context['show_spellchecking']))
-		echo '
-		<form name="spell_form" id="spell_form" method="post" accept-charset="', $context['character_set'], '" target="spellWindow" action="', $scripturl, '?action=spellcheck"><input type="hidden" name="spellstring" value="" /></form>';
 }
 
 // Personal Message settings.
@@ -2596,11 +2592,7 @@ function template_profile_signature_modify()
 								<span class="smalltext">', $txt['sig_info'], '</span><br />
 								<br />';
 
-	if ($context['show_spellchecking'])
-		echo '
-								<input type="button" value="', $txt['spell_check'], '" onclick="spellCheck(\'creator\', \'signature\');" class="button_submit" />';
-
-		echo '
+	echo '
 							</dt>
 							<dd>
 								<textarea class="editor" onkeyup="calcCharLeft();" name="signature" rows="5" cols="50" style="min-width: 50%; max-width: 99%;">', $context['member']['signature'], '</textarea><br />';
@@ -2613,11 +2605,6 @@ function template_profile_signature_modify()
 	if ($context['signature_warning'])
 		echo '
 								<span class="smalltext">', $context['signature_warning'], '</span>';
-
-	// Load the spell checker?
-	if ($context['show_spellchecking'])
-		echo '
-								<script type="text/javascript" src="', $settings['default_theme_url'], '/scripts/spellcheck.js"></script>';
 
 	// Some javascript used to count how many characters have been used so far in the signature.
 	echo '
