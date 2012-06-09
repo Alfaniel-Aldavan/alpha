@@ -1561,7 +1561,6 @@ function VersionDetail()
 	require_once($sourcedir . '/Subs-Admin.php');
 	$versionOptions = array(
 		'include_ssi' => true,
-		'include_subscriptions' => true,
 		'sort_results' => true,
 	);
 	$version_info = getFileVersions($versionOptions);

@@ -319,27 +319,6 @@ You can approve or reject this application by clicking the link below:
 {REGARDS}';
 
 /**
-	@additional_params: scheduled_approval
-		REALNAME: The real (display) name of the person receiving the email.
-		PROFILE_LINK: Link to profile of member receiving email where can renew.
-		SUBSCRIPTION: Name of the subscription.
-		END_DATE: Date it expires.
-	@description:
-*/
-$txt['paid_subscription_reminder_subject'] = 'Subscription about to expire at {FORUMNAME}';
-$txt['paid_subscription_reminder_body'] = '{REALNAME},
-
-A subscription you are subscribed to at {FORUMNAME} is about to expire. If when you took out the subscription you selected to auto-renew you need take no action - otherwise you may wish to consider subscribing once more. Details are below:
-
-Subscription Name: {SUBSCRIPTION}
-Expires: {END_DATE}
-
-To edit your subscriptions visit the following URL:
-{PROFILE_LINK}
-
-{REGARDS}';
-
-/**
 	@additional_params: activate_reactivate
 		ACTIVATIONLINK:  The url link to reactivate the member's account.
 		ACTIVATIONCODE:  The code needed to reactivate the member's account.
@@ -853,72 +832,6 @@ $txt['admin_attachments_full_body'] = '{REALNAME},
 The attachments folder at {FORUMNAME} is almost full. Please visit the forum to resolve this problem.
 
 Once the attachments folder reaches it\'s maximum permitted size users will not be able to continue to post attachments or upload custom avatars (If enabled).
-
-{REGARDS}';
-
-/**
-	@additional_params: paid_subscription_refund
-		NAME: Subscription title.
-		REALNAME: Recipients name
-		REFUNDUSER: Username who took out the subscription.
-		REFUNDNAME: User's display name who took out the subscription.
-		DATE: Today's date.
-		PROFILELINK: Link to members profile.
-	@description:
-*/
-$txt['paid_subscription_refund_subject'] = 'Refunded Paid Subscription';
-$txt['paid_subscription_refund_body'] = '{REALNAME},
-
-A member has received a refund on a paid subscription. Below are the details of this subscription:
-
-	Subscription: {NAME}
-	User Name: {REFUNDNAME} ({REFUNDUSER})
-	Date: {DATE}
-
-You can view this members profile by clicking the link below:
-{PROFILELINK}
-
-{REGARDS}';
-
-/**
-	@additional_params: paid_subscription_new
-		NAME: Subscription title.
-		REALNAME: Recipients name
-		SUBEMAIL: Email address of the user who took out the subscription
-		SUBUSER: Username who took out the subscription.
-		SUBNAME: User's display name who took out the subscription.
-		DATE: Today's date.
-		PROFILELINK: Link to members profile.
-	@description:
-*/
-$txt['paid_subscription_new_subject'] = 'New Paid Subscription';
-$txt['paid_subscription_new_body'] = '{REALNAME},
-
-A member has taken out a new paid subscription. Below are the details of this subscription:
-
-	Subscription: {NAME}
-	User Name: {SUBNAME} ({SUBUSER})
-	User Email: {SUBEMAIL}
-	Price: {PRICE}
-	Date: {DATE}
-
-You can view this members profile by clicking the link below:
-{PROFILELINK}
-
-{REGARDS}';
-
-/**
-	@additional_params: paid_subscription_error
-		ERROR: Error message.
-		REALNAME: Recipients name
-	@description:
-*/
-$txt['paid_subscription_error_subject'] = 'Paid Subscription Error Occurred';
-$txt['paid_subscription_error_body'] = '{REALNAME},
-
-The following error occurred when processing a paid subscription
----------------------------------------------------------------
-{ERROR}
 
 {REGARDS}';
 

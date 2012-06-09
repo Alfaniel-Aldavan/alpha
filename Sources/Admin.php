@@ -348,18 +348,6 @@ function AdminMain()
 						'log' => array($txt['ban_log']),
 					),
 				),
-				'paidsubscribe' => array(
-					'label' => $txt['paid_subscriptions'],
-					'enabled' => in_array('ps', $context['admin_features']),
-					'file' => 'ManagePaid.php',
-					'icon' => 'paid.png',
-					'function' => 'ManagePaidSubscriptions',
-					'permission' => 'admin_forum',
-					'subsections' => array(
-						'view' => array($txt['paid_subs_view']),
-						'settings' => array($txt['settings']),
-					),
-				),
 				'sengines' => array(
 					'label' => $txt['search_engines'],
 					'enabled' => in_array('sp', $context['admin_features']),
@@ -758,7 +746,6 @@ function AdminSearchInternal()
 		array('ModifyLanguageSettings', 'area=languages;sa=settings'),
 		array('ModifyRegistrationSettings', 'area=regcenter;sa=settings'),
 		array('ManageSearchEngineSettings', 'area=sengines;sa=settings'),
-		array('ModifySubscriptionSettings', 'area=paidsubscribe;sa=settings'),
 		array('ModifyPruningSettings', 'area=logs;sa=pruning'),
 	);
 

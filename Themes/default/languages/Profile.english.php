@@ -432,8 +432,6 @@ $txt['profile_viewwarning_desc'] = 'Below is a summary of all the warnings that 
 $txt['profile_viewwarning_previous_warnings'] = 'Previous Warnings';
 $txt['profile_viewwarning_impact'] = 'Warning Impact';
 
-$txt['subscriptions'] = 'Paid Subscriptions';
-
 $txt['pm_settings_desc'] = 'From this page you can change a variety of personal messaging options, including how messages are displayed and who may send them to you.';
 $txt['email_notify'] = 'Notify by email every time you receive a personal message:';
 $txt['email_notify_never'] = 'Never';

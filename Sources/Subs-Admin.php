@@ -123,21 +123,6 @@ function getFileVersions(&$versionOptions)
 			$version_info['file_versions']['SSI.php'] = '??';
 	}
 
-	// Do the paid subscriptions handler?
-	if (!empty($versionOptions['include_subscriptions']) && file_exists($boarddir . '/subscriptions.php'))
-	{
-		$fp = fopen($boarddir . '/subscriptions.php', 'rb');
-		$header = fread($fp, 4096);
-		fclose($fp);
-
-		// Found it?
-		if (preg_match('~\*\s@version\s+(.+)[\s]{2}~i', $header, $match) == 1)
-			$version_info['file_versions']['subscriptions.php'] = $match[1];
-		// If we haven't how do we all get paid?
-		else
-			$version_info['file_versions']['subscriptions.php'] = '??';
-	}
-
 	// Load all the files in the Sources directory, except this file and the redirect.
 	$sources_dir = dir($sourcedir);
 	while ($entry = $sources_dir->read())

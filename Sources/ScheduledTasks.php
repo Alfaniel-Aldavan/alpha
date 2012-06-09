@@ -1530,21 +1530,6 @@ function scheduled_weekly_maintenance()
 		}
 	}
 
-	// Get rid of any paid subscriptions that were never actioned.
-	$smcFunc['db_query']('', '
-		DELETE FROM {db_prefix}log_subscribed
-		WHERE end_time = {int:no_end_time}
-			AND status = {int:not_active}
-			AND start_time < {int:start_time}
-			AND payments_pending < {int:payments_pending}',
-		array(
-			'no_end_time' => 0,
-			'not_active' => 0,
-			'start_time' => time() - 60,
-			'payments_pending' => 1,
-		)
-	);
-
 	// Some OS's don't seem to clean out their sessions.
 	$smcFunc['db_query']('', '
 		DELETE FROM {db_prefix}sessions
@@ -1553,90 +1538,6 @@ function scheduled_weekly_maintenance()
 			'last_update' => time() - 86400,
 		)
 	);
-
-	return true;
-}
-
-/**
- * Perform the standard checks on expiring/near expiring subscriptions.
- */
-function scheduled_paid_subscriptions()
-{
-	global $txt, $sourcedir, $scripturl, $smcFunc, $modSettings, $language;
-
-	// Start off by checking for removed subscriptions.
-	$request = $smcFunc['db_query']('', '
-		SELECT id_subscribe, id_member
-		FROM {db_prefix}log_subscribed
-		WHERE status = {int:is_active}
-			AND end_time < {int:time_now}',
-		array(
-			'is_active' => 1,
-			'time_now' => time(),
-		)
-	);
-	while ($row = $smcFunc['db_fetch_assoc']($request))
-	{
-		require_once($sourcedir . '/ManagePaid.php');
-		removeSubscription($row['id_subscribe'], $row['id_member']);
-	}
-	$smcFunc['db_free_result']($request);
-
-	// Get all those about to expire that have not had a reminder sent.
-	$request = $smcFunc['db_query']('', '
-		SELECT ls.id_sublog, m.id_member, m.member_name, m.email_address, m.lngfile, s.name, ls.end_time
-		FROM {db_prefix}log_subscribed AS ls
-			INNER JOIN {db_prefix}subscriptions AS s ON (s.id_subscribe = ls.id_subscribe)
-			INNER JOIN {db_prefix}members AS m ON (m.id_member = ls.id_member)
-		WHERE ls.status = {int:is_active}
-			AND ls.reminder_sent = {int:reminder_sent}
-			AND s.reminder > {int:reminder_wanted}
-			AND ls.end_time < ({int:time_now} + s.reminder * 86400)',
-		array(
-			'is_active' => 1,
-			'reminder_sent' => 0,
-			'reminder_wanted' => 0,
-			'time_now' => time(),
-		)
-	);
-	$subs_reminded = array();
-	while ($row = $smcFunc['db_fetch_assoc']($request))
-	{
-		// If this is the first one load the important bits.
-		if (empty($subs_reminded))
-		{
-			require_once($sourcedir . '/Subs-Post.php');
-			// Need the below for loadLanguage to work!
-			loadEssentialThemeData();
-		}
-
-		$subs_reminded[] = $row['id_sublog'];
-
-		$replacements = array(
-			'PROFILE_LINK' => $scripturl . '?action=profile;area=subscriptions;u=' . $row['id_member'],
-			'REALNAME' => $row['member_name'],
-			'SUBSCRIPTION' => $row['name'],
-			'END_DATE' => strip_tags(timeformat($row['end_time'])),
-		);
-
-		$emaildata = loadEmailTemplate('paid_subscription_reminder', $replacements, empty($row['lngfile']) || empty($modSettings['userLanguage']) ? $language : $row['lngfile']);
-
-		// Send the actual email.
-		sendmail($row['email_address'], $emaildata['subject'], $emaildata['body'], null, null, false, 2);
-	}
-	$smcFunc['db_free_result']($request);
-
-	// Mark the reminder as sent.
-	if (!empty($subs_reminded))
-		$smcFunc['db_query']('', '
-			UPDATE {db_prefix}log_subscribed
-			SET reminder_sent = {int:reminder_sent}
-			WHERE id_sublog IN ({array_int:subscription_list})',
-			array(
-				'subscription_list' => $subs_reminded,
-				'reminder_sent' => 1,
-			)
-		);
 
 	return true;
 }

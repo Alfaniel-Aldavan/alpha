@@ -29,8 +29,6 @@ $txt['scheduled_task_birthdayemails'] = 'Send Birthday Emails';
 $txt['scheduled_task_desc_birthdayemails'] = 'Sends out emails wishing members a happy birthday.';
 $txt['scheduled_task_weekly_maintenance'] = 'Weekly Maintenance';
 $txt['scheduled_task_desc_weekly_maintenance'] = 'Runs essential weekly maintenance on the forum - should not be disabled.';
-$txt['scheduled_task_paid_subscriptions'] = 'Paid Subscription Checks';
-$txt['scheduled_task_desc_paid_subscriptions'] = 'Sends out any necessary paid subscription reminders and removes expired member subscriptions.';
 $txt['scheduled_task_remove_topic_redirect'] = 'Remove MOVED: redirection topics';
 $txt['scheduled_task_desc_remove_topic_redirect'] = 'Deletes "MOVED:" topic notifications as specified when the moved notice was created.';
 

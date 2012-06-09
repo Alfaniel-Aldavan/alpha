@@ -303,16 +303,6 @@ function ModifyProfile($post_errors = array())
 						'any' => array('manage_bans'),
 					),
 				),
-				'subscriptions' => array(
-					'label' => $txt['subscriptions'],
-					'file' => 'Profile-Actions.php',
-					'function' => 'subscriptions',
-					'enabled' => !empty($modSettings['paid_enabled']),
-					'permission' => array(
-						'own' => array('profile_view_own'),
-						'any' => array('moderate_forum'),
-					),
-				),
 				'deleteaccount' => array(
 					'label' => $txt['deleteAccount'],
 					'file' => 'Profile-Actions.php',

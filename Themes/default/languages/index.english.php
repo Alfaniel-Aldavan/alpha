@@ -302,10 +302,6 @@ $txt['hours'] = 'hours';
 $txt['minutes'] = 'minutes';
 $txt['seconds'] = 'seconds';
 
-// Used upper case in Paid subscriptions management
-$txt['hour'] = 'Hour';
-$txt['days_word'] = 'days';
-
 $txt['newest_member'] = ', our newest member.';
 
 $txt['search_for'] = 'Search for';
