@@ -1116,7 +1116,6 @@ function setPermissionLevel($level, $group, $profile = 'null')
 	// Standard - ie. members.  They can do anything Restrictive can.
 	$groupLevels['global']['standard'] = array_merge($groupLevels['global']['restrict'], array(
 		'view_mlist',
-		'karma_edit',
 		'pm_read',
 		'pm_send',
 		'profile_view_any',
@@ -1458,7 +1457,6 @@ function loadAllPermissions($loadType = 'classic')
 			'view_mlist' => array(false, 'general', 'view_basic_info'),
 			'who_view' => array(false, 'general', 'view_basic_info'),
 			'search_posts' => array(false, 'general', 'view_basic_info'),
-			'karma_edit' => array(false, 'general', 'moderate_general'),
 			'disable_censor' => array(false, 'general', 'disable_censor'),
 			'pm_read' => array(false, 'pm', 'use_pm_system'),
 			'pm_send' => array(false, 'pm', 'use_pm_system'),
@@ -1546,8 +1544,6 @@ function loadAllPermissions($loadType = 'classic')
 	}
 	if (!in_array('w', $context['admin_features']))
 		$hiddenPermissions[] = 'issue_warning';
-	if (!in_array('k', $context['admin_features']))
-		$hiddenPermissions[] = 'karma_edit';
 
 	// Post moderation?
 	if (!$modSettings['postmod_active'])
@@ -2209,7 +2205,6 @@ function loadIllegalGuestPermissions()
 
 	$context['non_guest_permissions'] = array(
 		'delete_replies',
-		'karma_edit',
 		'poll_add_own',
 		'pm_read',
 		'pm_send',

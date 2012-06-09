@@ -101,15 +101,6 @@ $txt['meta_keywords_note'] = 'For search engines. Leave blank for default.';
 $txt['settings_error'] = 'Warning: Updating of Settings.php failed, the settings cannot be saved.';
 $txt['core_settings_saved'] = 'The settings were successfully saved';
 
-$txt['karmaMode'] = 'Karma mode';
-$txt['karma_options'] = 'Disable karma|Enable karma total|Enable karma positive/negative';
-$txt['karmaMinPosts'] = 'Set the minimum posts needed to modify karma';
-$txt['karmaWaitTime'] = 'Set wait time in hours';
-$txt['karmaTimeRestrictAdmins'] = 'Restrict administrators to wait time';
-$txt['karmaLabel'] = 'Karma label';
-$txt['karmaApplaudLabel'] = 'Karma applaud label';
-$txt['karmaSmiteLabel'] = 'Karma smite label';
-
 $txt['caching_information'] = '<div class="aligncenter underline"><strong>Important! Read this first before enabling these features.</strong></div>
 SMF supports caching through the use of accelerators. The currently supported accelerators include:
 <ul class="normallist">
@@ -302,8 +293,6 @@ $txt['core_settings_item_cd'] = 'Calendar';
 $txt['core_settings_item_cd_desc'] = 'Enabling this feature will open up a selection of options to enable your users to view the calendar, add and review events, see users birthdates on a calendar and much, much more.';
 $txt['core_settings_item_cp'] = 'Advanced Profile Fields';
 $txt['core_settings_item_cp_desc'] = 'This enables you to hide standard profile fields, add profile fields to registration, and create new profile fields for your forum.';
-$txt['core_settings_item_k'] = 'Karma';
-$txt['core_settings_item_k_desc'] = 'Karma is a feature that shows the popularity of a member. Members, if allowed, can \'applaud\' or \'smite\' other members, which is how their popularity is calculated.';
 $txt['core_settings_item_ml'] = 'Moderation, Administration and User Logs';
 $txt['core_settings_item_ml_desc'] = 'Enable the moderation and administration logs to keep an audit trail of all the key actions taken on your forum. Also allows forum moderators to view a history of key changes a user makes to their profile.';
 $txt['core_settings_item_pm'] = 'Post Moderation';

@@ -55,7 +55,6 @@ function ModifyFeatureSettings()
 	$subActions = array(
 		'basic' => 'ModifyBasicSettings',
 		'layout' => 'ModifyLayoutSettings',
-		'karma' => 'ModifyKarmaSettings',
 		'sig' => 'ModifySignatureSettings',
 		'profile' => 'ShowCustomProfiles',
 		'profileedit' => 'EditCustomProfiles',
@@ -66,10 +65,6 @@ function ModifyFeatureSettings()
 	// If Advanced Profile Fields are disabled don't show the setting page
 	if (!in_array('cp', $context['admin_features']))
 		unset($subActions['profile']);
-
-	// Same for Karma
-	if (!in_array('k', $context['admin_features']))
-		unset($subActions['karma']);
 
 	loadGeneralSettingParameters($subActions, 'basic');
 
@@ -82,8 +77,6 @@ function ModifyFeatureSettings()
 			'basic' => array(
 			),
 			'layout' => array(
-			),
-			'karma' => array(
 			),
 			'sig' => array(
 				'description' => $txt['signature_settings_desc'],
@@ -224,13 +217,6 @@ function ModifyCoreFeatures($return_config = false)
 				else
 					return array();
 			'),
-		),
-		// k = karma.
-		'k' => array(
-			'url' => 'action=admin;area=featuresettings;sa=karma',
-			'settings' => array(
-				'karmaMode' => 2,
-			),
 		),
 		// ml = moderation log.
 		'ml' => array(
@@ -616,51 +602,6 @@ function ModifyLayoutSettings($return_config = false)
 }
 
 /**
- *
- * @param $return_config
- */
-function ModifyKarmaSettings($return_config = false)
-{
-	global $txt, $scripturl, $context, $settings, $sc;
-
-	$config_vars = array(
-			// Karma - On or off?
-			array('select', 'karmaMode', explode('|', $txt['karma_options'])),
-		'',
-			// Who can do it.... and who is restricted by time limits?
-			array('int', 'karmaMinPosts', 6, 'postinput' => strtolower($txt['posts'])),
-			array('float', 'karmaWaitTime', 6, 'postinput' => $txt['hours']),
-			array('check', 'karmaTimeRestrictAdmins'),
-		'',
-			// What does it look like?  [smite]?
-			array('text', 'karmaLabel'),
-			array('text', 'karmaApplaudLabel'),
-			array('text', 'karmaSmiteLabel'),
-	);
-
-	call_integration_hook('integrate_karma_settings', array(&$config_vars));
-
-	if ($return_config)
-		return $config_vars;
-
-	// Saving?
-	if (isset($_GET['save']))
-	{
-		checkSession();
-
-		call_integration_hook('integrate_save_karma_settings');
-
-		saveDBSettings($config_vars);
-		redirectexit('action=admin;area=featuresettings;sa=karma');
-	}
-
-	$context['post_url'] = $scripturl . '?action=admin;area=featuresettings;save;sa=karma';
-	$context['settings_title'] = $txt['karma'];
-
-	prepareDBSettingContext($config_vars);
-}
-
-/**
  * Moderation type settings - although there are fewer than we have you believe ;)
  *
  * @param bool $return_config = false
@@ -712,8 +653,6 @@ function ModifyModerationSettings($return_config = false)
 		$save_vars = $config_vars;
 		$save_vars[] = array('text', 'warning_settings');
 		unset($save_vars['rem1'], $save_vars['rem2']);
-
-		call_integration_hook('integrate_save_karma_settings', array(&$save_vars));
 
 		saveDBSettings($save_vars);
 		redirectexit('action=admin;area=securitysettings;sa=moderation');
