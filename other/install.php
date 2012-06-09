@@ -356,8 +356,6 @@ function load_database()
 	if (!$db_connection)
 	{
 		require_once($sourcedir . '/Subs-Db-' . $db_type . '.php');
-		if (version_compare(PHP_VERSION, '5', '<'))
-			require_once($sourcedir . '/Subs-Compat.php');
 
 		if (!$db_connection)
 			$db_connection = smf_db_initiate($db_server, $db_name, $db_user, $db_passwd, $db_prefix, array('persist' => $db_persist));
@@ -804,10 +802,6 @@ function DatabaseSettings()
 			$smcFunc = array();
 
 			require_once($sourcedir . '/Subs-Db-' . $db_type . '.php');
-
-		// What - running PHP4? The shame!
-		if (version_compare(PHP_VERSION, '5', '<'))
-			require_once($sourcedir . '/Subs-Compat.php');
 
 		// Attempt a connection.
 		$needsDB = !empty($databases[$db_type]['always_has_db']);
@@ -1263,7 +1257,7 @@ function AdminAccount()
 	load_database();
 
 	// Define the sha1 function, if it doesn't exist.
-	if (!function_exists('sha1') || version_compare(PHP_VERSION, '5', '<'))
+	if (!function_exists('sha1'))
 		require_once($sourcedir . '/Subs-Compat.php');
 
 	if (!isset($_POST['username']))
