@@ -1157,5 +1157,3 @@ function ModifyMembergroupsettings()
 
 	prepareDBSettingContext($config_vars);
 }
-
-?>

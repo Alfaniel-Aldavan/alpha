@@ -487,5 +487,3 @@ function template_add_language()
 	</div>
 	<br class="clear" />';
 }
-
-?>

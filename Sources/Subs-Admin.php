@@ -501,5 +501,3 @@ function emailAdmins($template, $replacements = array(), $additional_recipients 
 			sendmail($recipient['email'], $emaildata['subject'], $emaildata['body'], null, null, false, 1);
 		}
 }
-
-?>

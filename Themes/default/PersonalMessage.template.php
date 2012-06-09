@@ -1844,5 +1844,3 @@ function template_add_rule()
 	echo '
 		// ]]></script>';
 }
-
-?>

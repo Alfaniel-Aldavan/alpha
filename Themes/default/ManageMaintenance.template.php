@@ -697,5 +697,3 @@ function template_convert_entities()
 	</div>
 	<br class="clear" />';
 }
-
-?>

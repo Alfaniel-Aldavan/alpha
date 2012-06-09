@@ -4140,5 +4140,3 @@ function sanitizeMSCutPaste($string)
 
 	return $string;
 }
-
-?>

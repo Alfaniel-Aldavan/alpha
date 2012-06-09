@@ -999,5 +999,3 @@ function template_announcement_send()
 			}
 		// ]]></script>';
 }
-
-?>

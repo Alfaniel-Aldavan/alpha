@@ -275,5 +275,3 @@ function template_settings()
 		),
 	);
 }
-
-?>

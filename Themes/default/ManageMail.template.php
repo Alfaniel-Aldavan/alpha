@@ -39,5 +39,3 @@ function template_browse()
 	</div>
 	<br class="clear" />';
 }
-
-?>

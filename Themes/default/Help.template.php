@@ -182,5 +182,3 @@ function template_manual()
 			</div>
 			<br class="clear" />';
 }
-
-?>

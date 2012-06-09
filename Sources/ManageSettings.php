@@ -2423,5 +2423,3 @@ function get_integration_hooks()
 
 	return $integration_hooks;
 }
-
-?>

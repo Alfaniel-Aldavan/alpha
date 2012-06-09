@@ -136,5 +136,3 @@ function CollapseCategory()
 	// And go back to the board index.
 	BoardIndex();
 }
-
-?>

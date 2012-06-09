@@ -2040,5 +2040,3 @@ function attachDirStatus($dir, $expected_files)
 	else
 		return array('ok', false, $dir_size);
 }
-
-?>

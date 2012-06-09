@@ -636,4 +636,3 @@ function template_css()
 	<link rel="stylesheet" type="text/css" href="', $filename, '" />';
 }
 
-?>

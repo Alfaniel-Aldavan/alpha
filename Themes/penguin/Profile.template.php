@@ -3028,5 +3028,3 @@ function template_authentication_method()
 	// ]]></script>';
 }
 
-
-?>

@@ -4515,5 +4515,3 @@ function template_upgrade_complete()
 			Best of luck,<br />
 			Simple Machines';
 }
-
-?>

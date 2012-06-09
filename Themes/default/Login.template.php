@@ -316,5 +316,3 @@ function template_resend()
 			<span class="lowerframe"><span></span></span>
 		</form>';
 }
-
-?>

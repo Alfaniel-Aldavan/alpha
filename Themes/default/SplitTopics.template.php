@@ -470,5 +470,3 @@ function template_merge_extra_options()
 	</div>
 	<br class="clear" />';
 }
-
-?>

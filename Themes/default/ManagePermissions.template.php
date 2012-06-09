@@ -1184,5 +1184,3 @@ function template_postmod_permissions()
 	</div>
 	<br class="clear" />';
 }
-
-?>

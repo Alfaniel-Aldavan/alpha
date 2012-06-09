@@ -2223,4 +2223,3 @@ function AutoSuggest_Search_SMFVersions()
 
 	return $xml_data;
 }
-?>

@@ -49,5 +49,3 @@ function template_notify_board()
 		</div>
 		<span class="lowerframe"><span></span></span>';
 }
-
-?>

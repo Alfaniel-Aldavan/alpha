@@ -496,5 +496,3 @@ function logAction($action, $extra = array(), $log_type = 'moderate')
 
 	return $smcFunc['db_insert_id']('{db_prefix}log_actions', 'id_action');
 }
-
-?>

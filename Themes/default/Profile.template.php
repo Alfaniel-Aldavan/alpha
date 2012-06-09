@@ -2968,5 +2968,3 @@ function template_authentication_method()
 	updateAuthMethod();
 	// ]]></script>';
 }
-
-?>

@@ -1978,5 +1978,3 @@ function MaintainRecountPosts()
 	$context['maintenance_finished'] = $txt['maintain_recountposts'];
 	redirectexit('action=admin;area=maintain;sa=members;done=recountposts');
 }
-
-?>

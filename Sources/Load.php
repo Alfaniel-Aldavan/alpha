@@ -2752,5 +2752,3 @@ function get_memcached_server($level = 3)
 	if (!$memcached && $level > 0)
 		get_memcached_server($level - 1);
 }
-
-?>

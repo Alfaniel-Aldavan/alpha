@@ -652,5 +652,3 @@ $txt['hooks_disable_legend_exists'] = 'the hook exists and is active';
 $txt['hooks_disable_legend_disabled'] = 'the hook exists but has been disabled';
 $txt['hooks_disable_legend_missing'] = 'the hook has not been found';
 $txt['hooks_reset_filter'] = 'Reset filter';
-
-?>

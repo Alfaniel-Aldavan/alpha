@@ -773,5 +773,3 @@ function loadCustomFields($memID, $area = 'summary')
 	}
 	$smcFunc['db_free_result']($request);
 }
-
-?>

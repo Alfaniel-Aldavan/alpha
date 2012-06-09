@@ -1317,5 +1317,3 @@ function UnreadTopics()
 	$context['querystring_board_limits'] = sprintf($context['querystring_board_limits'], $_REQUEST['start']);
 	$context['topics_to_mark'] = implode('-', $topic_ids);
 }
-
-?>

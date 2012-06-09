@@ -803,5 +803,3 @@ function loadSearchAPIs()
 
 	return $apis;
 }
-
-?>

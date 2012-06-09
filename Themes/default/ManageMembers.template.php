@@ -326,5 +326,3 @@ function template_admin_browse()
 	</div>
 	<br class="clear" />';
 }
-
-?>

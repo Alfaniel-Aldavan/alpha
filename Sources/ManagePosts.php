@@ -396,5 +396,3 @@ function ModifyTopicSettings($return_config = false)
 	// Prepare the settings...
 	prepareDBSettingContext($config_vars);
 }
-
-?>

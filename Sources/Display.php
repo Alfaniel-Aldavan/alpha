@@ -1733,5 +1733,3 @@ function QuickInTopicModeration()
 
 	redirectexit(!empty($topicGone) ? 'board=' . $board : 'topic=' . $topic . '.' . $_REQUEST['start']);
 }
-
-?>
