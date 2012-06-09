@@ -186,7 +186,7 @@ function sha1_core($x, $len)
 	return sprintf('%08x%08x%08x%08x%08x', $a, $b, $c, $d, $e);
 }
 
-/*
+/**
  * Helper function for the core SHA-1 calculation
  */
 function sha1_ft($t, $b, $c, $d)
@@ -201,7 +201,7 @@ function sha1_ft($t, $b, $c, $d)
 	return $b ^ $c ^ $d;
 }
 
-/*
+/**
  * Helper function for the core SHA-1 calculation
  */
 function sha1_kt($t)
@@ -209,7 +209,7 @@ function sha1_kt($t)
 	return $t < 20 ? 1518500249 : ($t < 40 ? 1859775393 : ($t < 60 ? -1894007588 : -899497514));
 }
 
-/*
+/**
  * Helper function for the core SHA-1 calculation
  */
 function sha1_rol($num, $cnt)
